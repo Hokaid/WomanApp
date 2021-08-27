@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -17,6 +16,7 @@ const App = () => {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="ForgotPassw" component={ForgotPassw} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="DestinationHistory" component={DestinationHistory} />
       </Stack.Navigator>
     </NavigationContainer>
   );
