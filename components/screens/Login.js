@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image,TextInput,Text, Pressable} from 'react-native';
-import styles from './Styles';
+import styles from '../styles/MainStyles';
 
 const Login = ({ navigation }) => {
   const [email, onChangeEmail] = React.useState("");
@@ -8,11 +8,11 @@ const Login = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.logo} source={require('../assets/women_logo.png')} />
+      <Image style={styles.logo} source={require('../../assets/women_logo.png')} />
       <View style={styles.inputsContainer}>
         <View style={styles.inputContainer}>
           <View style={styles.iconContainer}>
-            <Image style={styles.icon} source={require('../assets/mail.png')}/>
+            <Image style={styles.icon} source={require('../../assets/mail.png')}/>
           </View>
           <View style={styles.textInputContainer}>
             <TextInput
@@ -23,7 +23,7 @@ const Login = ({ navigation }) => {
         </View>
         <View style={styles.inputContainer}>
           <View style={styles.iconContainer}>
-            <Image style={styles.icon} source={require('../assets/padlock.png')}
+            <Image style={styles.icon} source={require('../../assets/padlock.png')}
             />
           </View>
           <View style={styles.textInputContainer}>

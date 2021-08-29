@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity , TextInput, View, Image, Pressable, Text } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-import styles from './Styles';
+import styles from '../styles/MainStyles';
 
 const SignUp = ({ navigation }) => {
     const [isDatePickerVisible, setDatePickerVisibility] = React.useState(false);
@@ -24,11 +24,11 @@ const SignUp = ({ navigation }) => {
 
     return (
       <View style={styles.container}>
-        <Image style={styles.logo} source={require('../assets/women_logo.png')} />
+        <Image style={styles.logo} source={require('../../assets/women_logo.png')} />
         <View style={styles.signUpInputsContainer}>
         <View style={styles.inputContainer}>
           <View style={styles.iconContainer}>
-            <Image style={styles.icon} source={require('../assets/mail.png')}/>
+            <Image style={styles.icon} source={require('../../assets/mail.png')}/>
           </View>
           <View style={styles.textInputContainer}>
             <TextInput
@@ -39,7 +39,7 @@ const SignUp = ({ navigation }) => {
         </View>
         <View style={styles.inputContainer}>
           <View style={styles.iconContainer}>
-            <Image style={styles.icon} source={require('../assets/padlock.png')}/>
+            <Image style={styles.icon} source={require('../../assets/padlock.png')}/>
           </View>
           <View style={styles.textInputContainer}>
             <TextInput
@@ -50,7 +50,7 @@ const SignUp = ({ navigation }) => {
         </View>
         <View style={styles.inputContainer}>
           <View style={styles.iconContainer}>
-            <Image style={styles.icon} source={require('../assets/padlock.png')}/>
+            <Image style={styles.icon} source={require('../../assets/padlock.png')}/>
           </View>
           <View style={styles.textInputContainer}>
             <TextInput
@@ -61,7 +61,7 @@ const SignUp = ({ navigation }) => {
         </View>
         <View style={styles.inputContainer}>
           <View style={styles.iconContainer}>
-            <Image style={styles.icon} source={require('../assets/profile-user.png')}/>
+            <Image style={styles.icon} source={require('../../assets/profile-user.png')}/>
           </View>
           <View style={styles.textInputContainer}>
             <TextInput
@@ -78,7 +78,7 @@ const SignUp = ({ navigation }) => {
             />
           </View>
           <Pressable style={styles.dateButton} onPress={showDatePicker}>
-            <Image style={styles.dateIcon} source={require('../assets/calendar.jpg')}/>
+            <Image style={styles.dateIcon} source={require('../../assets/calendar.jpg')}/>
           </Pressable>
         </View>
         <View style={styles.RBContainer}>
@@ -87,12 +87,12 @@ const SignUp = ({ navigation }) => {
                 <View style={styles.RBbtnContainer} key={key}>
                     {genderCode == key ?
                         <TouchableOpacity style={styles.RBbtn}>
-                            <Image style={styles.RBimg} source={require("../assets/rb_selected.png")}/>
+                            <Image style={styles.RBimg} source={require("../../assets/rb_selected.png")}/>
                             <Text>{data}</Text>
                         </TouchableOpacity>
                         :
                         <TouchableOpacity onPress={()=>{onChangeGenderCode(key)}} style={styles.RBbtn}>
-                            <Image style={styles.RBimg} source={require("../assets/rb_unselected.png")} />
+                            <Image style={styles.RBimg} source={require("../../assets/rb_unselected.png")} />
                             <Text>{data}</Text>
                         </TouchableOpacity>
                     }

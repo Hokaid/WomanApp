@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Image, TextInput, Text, Pressable} from 'react-native';
-import styles from './Styles';
+import { View, Image, TextInput, Text, Pressable, SafeAreaView} from 'react-native';
+import styles from '../styles/MainStyles';
 import { Icon } from 'react-native-elements';
 
 const Home = ({ navigation }) => {
@@ -10,18 +10,18 @@ const Home = ({ navigation }) => {
   const hideSidebarMenu = () => { setMenuVisibility(false); };
 
   return (
-    <View>
+    <SafeAreaView>
         <View>
-            <Image style={styles.background} source={require('../assets/map.jpg')} />
+            <Image style={styles.background} source={require('../../assets/map.jpg')} />
         </View>
         <View style={styles.headerContainer}>
             <Pressable style={styles.hamburgerButton} onPress={showSidebarMenu}>
-                <Image style={styles.hamburgerIcon} source={require('../assets/menu.png')} />
+                <Image style={styles.hamburgerIcon} source={require('../../assets/menu.png')} />
             </Pressable>
         </View>
         <View style={styles.incidentsContainer}>
             <View style={styles.incidentsBox}>
-                <Image style={styles.warningIcon} source={require('../assets/warning.png')} />
+                <Image style={styles.warningIcon} source={require('../../assets/warning.png')} />
                 <Text style={styles.incidentsText}>Incidentes</Text>
                 <View style={styles.incidentsDropIcon}>
                     <Icon name='sort-down' type='font-awesome' color='#14f7a8'  size={20} />
@@ -32,19 +32,19 @@ const Home = ({ navigation }) => {
             <View style={styles.floatingElementsBox}>
                 <View style={styles.floatingLeftButtons}>
                     <View style={styles.floatingCircle}>
-                        <Image style={styles.floatingIcon} source={require('../assets/clock.png')}/>
+                        <Image style={styles.floatingIcon} source={require('../../assets/clock.png')}/>
                     </View>
                     <View style={styles.floatingCircle}>
-                        <Image style={styles.floatingIcon} source={require('../assets/gps-fixed-indicator.png')}/>
+                        <Image style={styles.floatingIcon} source={require('../../assets/gps-fixed-indicator.png')}/>
                     </View>
                 </View>
                 <View style={styles.floatingRightButtons}>
                     <View style={styles.auditBox}>
-                        <Image style={styles.auditIcon} source={require('../assets/protected.png')}/>
+                        <Image style={styles.auditIcon} source={require('../../assets/protected.png')}/>
                         <Text style={styles.auditText}>Auditar Zona</Text>
                     </View>
                     <View style={styles.sosBox}>
-                        <Image style={styles.sosIcon} source={require('../assets/SOS.png')}/>
+                        <Image style={styles.sosIcon} source={require('../../assets/SOS.png')}/>
                     </View>
                 </View>
             </View>
@@ -62,14 +62,14 @@ const Home = ({ navigation }) => {
                 </View>
                 <View style={styles.questionBox}>
                     <View style={styles.questionContainer}>
-                        <Image style={styles.shieldIcon} source={require('../assets/shield.png')} />
+                        <Image style={styles.shieldIcon} source={require('../../assets/shield.png')} />
                         <Text style={styles.questionText}>¿Quieres registrar una incidencia?</Text>
                     </View>
                     <View styles={styles.infoIconBox}>
                         <Icon name='info' />
                     </View>
                 </View>
-                <Pressable style={styles.registerButton}>
+                <Pressable style={styles.registerButton} onPress={() => navigation.navigate('IncidentRegister')}>
                     <Text style={styles.registerText}>REGISTRAR INCIDENCIA</Text>
                 </Pressable>
             </View>
@@ -88,7 +88,7 @@ const Home = ({ navigation }) => {
         { isMenuVisible && <View style={styles.sidenavContainer}>
             <Pressable style={styles.profileContainer}>
                 <View style={styles.profileImageContainer}>
-                    <Image style={styles.profileImage} source={require('../assets/user-photo.png')} />
+                    <Image style={styles.profileImage} source={require('../../assets/user-photo.png')} />
                 </View>
                 <View style={styles.profileInfoContainer}>
                     <View style={styles.profileNameContainer}>
@@ -101,31 +101,31 @@ const Home = ({ navigation }) => {
             </Pressable>
             <Pressable style={styles.sidenavOptionBox}>
                 <View style={styles.optionIconContainer}>
-                    <Image style={styles.optionIconImage} source={require('../assets/pencil.png')} />
+                    <Image style={styles.optionIconImage} source={require('../../assets/pencil.png')} />
                 </View>
                 <View style={styles.optionTextContainer}>
                     <Text style={styles.optionText}>Editar Perfil</Text>
                 </View>
             </Pressable>
-            <Pressable style={styles.sidenavOptionBox}>
+            <Pressable style={styles.sidenavOptionBox} onPress={() => navigation.navigate('DestinationHistory')}>
                 <View style={styles.optionIconContainer}>
-                    <Image style={styles.optionIconImage} source={require('../assets/history.png')} />
+                    <Image style={styles.optionIconImage} source={require('../../assets/history.png')} />
                 </View>
                 <View style={styles.optionTextContainer}>
                     <Text style={styles.optionText}>Historial de Destinos</Text>
                 </View>
             </Pressable>
-            <Pressable style={styles.sidenavOptionBox}>
+            <Pressable style={styles.sidenavOptionBox} onPress={() => navigation.navigate('Settings')}>
                 <View style={styles.optionIconContainer}>
-                    <Image style={styles.optionIconImage} source={require('../assets/gear.png')} />
+                    <Image style={styles.optionIconImage} source={require('../../assets/gear.png')} />
                 </View>
                 <View style={styles.optionTextContainer}>
                     <Text style={styles.optionText}>Configuración y Privacidad</Text>
                 </View>
             </Pressable>
-            <Pressable style={styles.sidenavOptionBox}>
+            <Pressable style={styles.sidenavOptionBox} onPress={() => navigation.navigate('Review')}>
                 <View style={styles.optionIconContainer}>
-                    <Image style={styles.optionIconImage} source={require('../assets/star.png')} />
+                    <Image style={styles.optionIconImage} source={require('../../assets/star.png')} />
                 </View>
                 <View style={styles.optionTextContainer}>
                     <Text style={styles.optionText}>Reseña y calificación</Text>
@@ -133,7 +133,7 @@ const Home = ({ navigation }) => {
             </Pressable>
             <Pressable style={styles.sidenavLogOutBox} onPress={() => navigation.navigate('Login')}>
                 <View style={styles.optionIconContainer}>
-                    <Image style={styles.optionIconImage} source={require('../assets/logout.png')} />
+                    <Image style={styles.optionIconImage} source={require('../../assets/logout.png')} />
                 </View>
                 <View style={styles.optionTextContainer}>
                     <Text style={styles.optionText}>Cerrar Sesión</Text>
@@ -141,7 +141,7 @@ const Home = ({ navigation }) => {
             </Pressable>
         </View>} 
         {isMenuVisible && <Pressable onPress={hideSidebarMenu} style={styles.sidenavBackground}></Pressable>}
-    </View>
+    </SafeAreaView>
   );
 }
 
