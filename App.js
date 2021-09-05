@@ -7,6 +7,9 @@ import DestinationHistory from './components/screens/DestinationHistory';
 import Settings from './components/screens/Settings';
 import Review from './components/screens/Review';
 import IncidentRegister from './components/screens/IncidentRegister';
+import SafeJourney from './components/screens/SafeJourney';
+import AdminLogin from './components/screens/AdminLogin';
+import Alerts from './components/screens/Alerts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -24,6 +27,9 @@ const App = () => {
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="Review" component={Review} />
         <Stack.Screen name="IncidentRegister" component={IncidentRegister} />
+        <Stack.Screen name="SafeJourney" component={SafeJourney} />
+        <Stack.Screen name="AdminLogin" component={AdminLogin} />
+        <Stack.Screen name="Alerts" component={Alerts} />
       </Stack.Navigator>
     </NavigationContainer>
   );

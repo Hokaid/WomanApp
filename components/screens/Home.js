@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Image, TextInput, Text, Pressable, SafeAreaView} from 'react-native';
+import { View, Image, Text, Pressable, SafeAreaView} from 'react-native';
 import styles from '../styles/MainStyles';
 import { Icon } from 'react-native-elements';
 
 const Home = ({ navigation }) => {
-  const [search, onChangeSearch] = React.useState("");
   const [isMenuVisible, setMenuVisibility] = React.useState(false);
   const showSidebarMenu = () => { setMenuVisibility(true); };
   const hideSidebarMenu = () => { setMenuVisibility(false); };
@@ -77,12 +76,9 @@ const Home = ({ navigation }) => {
                 <View style={styles.iconSearch}>
                     <Icon name='search' color='#54b895' size={30} />
                 </View>
-                <View style={styles.textSearchContainer}>
-                    <TextInput
-                        style={styles.textSearch} onChangeText={onChangeSearch}
-                        value={search} placeholder="¿A dónde vas?" placeholderTextColor='#54b895' 
-                    />
-                </View>
+                <Pressable style={styles.textSearchContainer} onPress={() => navigation.navigate('SafeJourney')}>
+                    <Text style={styles.textSearch}>¿A dónde vas?</Text>
+                </Pressable>
             </View>
         </View>
         { isMenuVisible && <View style={styles.sidenavContainer}>

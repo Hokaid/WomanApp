@@ -193,6 +193,11 @@ const styles = StyleSheet.create({
       paddingTop: 15,
       color: '#54b895'
     },
+    textSearch: {
+      paddingTop: 4,
+      fontSize: 14,
+      color: '#54b895'
+    },
     securityBox: {
       width: '90%',
       height: 35,
